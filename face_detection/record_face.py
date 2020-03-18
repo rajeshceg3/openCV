@@ -22,7 +22,7 @@ while True:
             if index%10 == 0 and len(data) < 20:
                 data.append(fc)
 
-            # Draw a rect around the detected face
+            # Draw a rect around the detected face 
             cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
         index += 1 
         cv2.imshow('Image', frame)  
