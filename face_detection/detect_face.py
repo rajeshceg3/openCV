@@ -45,12 +45,12 @@ while True:
     if ret == True:
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         faces = face_cas.detectMultiScale(gray, 1.3, 5)
-		# Iterate through faces array
+	# Iterate through faces array
         for (x, y, w, h) in faces: 
-			# Preprocess image
+	    # Preprocess image
             face_point = frame[y:y+h, x:x+w, :]
             fc = cv2.resize(face_point, (50, 50))
-			# Run knn algorithm
+	    # Run knn algorithm
             result = knn(fc.flatten(), data, labels)
             # convert this label to int and get the corresponding name
             text = entries[int(result)]
